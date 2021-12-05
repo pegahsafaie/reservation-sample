@@ -1,3 +1,6 @@
+# Deploy
+
+deploy on Heroku as monorepo
 # decisions
 
 insertReservation should not be available for public
