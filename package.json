@@ -1,0 +1,13 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "dev": "concurrently --kill-others --success first \"npm start --prefix ./packages/api\" \"npm run serve --prefix ./packages/web\"",
+    "build": "lerna run build"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0",
+    "concurrently": "^3.6.0"
+  }
+}
