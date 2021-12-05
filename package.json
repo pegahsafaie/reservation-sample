@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "dev": "concurrently --kill-others --success first \"npm start --prefix ./packages/api\" \"npm run serve --prefix ./packages/web\"",
+    "start": "concurrently --kill-others --success first \"npm start --prefix ./packages/api\" \"npm run start --prefix ./packages/web\"",
     "build": "lerna run build"
   },
   "devDependencies": {
