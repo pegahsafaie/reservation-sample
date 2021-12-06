@@ -1,0 +1,77 @@
+swagger: "2.0"
+info:
+  description: "This is a public api for a sample reservation server"
+  version: "1.0.0"
+  title: "Reservation"
+host: "sample-reservation-api.herokuapp.com"
+basePath: "/public-api"
+schemes:
+- "https"
+paths:
+  /reservation:
+    get:
+      summary: "Finds all reservations"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "object"
+            properties:
+              error:
+                type: "boolean"
+                default: "false"
+              total:
+                type: "integer"
+              statusCode:
+                type: "integer"
+                default: "200"
+              data:
+                type: "array"
+                items:
+                  $ref: "#/definitions/UserReservation"
+        "400":
+          description: "Invalid input"
+definitions:
+  UserReservation:
+    type: "object"
+    properties:
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      email:
+        type: "string"
+      phone:
+        type: "string"
+      billings:
+       type: "array"
+       items:
+         $ref: "#/definitions/Billing"
+      reservations:
+       type: "array"
+       items:
+         $ref: "#/definitions/Reservation"
+    xml:
+      name: "User"
+  Billing:
+    type: "object"
+    properties:
+      country:
+        type: "string"
+      address:
+        type: "string"
+    xml:
+      name: "Billing"
+  Reservation:
+    type: "object"
+    properties:
+      checkInDate:
+        type: "string"
+      checkOutDate:
+        type: "string"
+      numberOfGuests:
+        type: "integer"
+    xml:
+      name: "Reservation"

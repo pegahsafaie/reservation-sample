@@ -1,1 +1,0 @@
-1. find a better way to introduce * into requied fields. currently I have to duplicate slot for each component
