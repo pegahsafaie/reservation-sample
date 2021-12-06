@@ -1,8 +1,8 @@
 const restAPI = function(baseURL) {
   this.baseURL = baseURL;
-  this.fetch = async (searchUrl) => {
+  this.fetch = async (endpoint, params) => {
     try {
-      return fetch(`${this.baseURL}${searchUrl}`);
+      return fetch(`${this.baseURL}${endpoint}`, params);
     } catch (expection) {
       throw new Error('A network error happened. You might have problem with your connection');
     }
@@ -24,10 +24,23 @@ const restAPI = function(baseURL) {
     }
     return response;
   }
-  this.get = async (searchUrl) => {
-    return this.fetch(searchUrl)
+  this.get = async (endpoint) => {
+    return this.fetch(endpoint)
       .then(this.handleHTTPError)
       .then(response => response.json())
+  }
+
+
+  this.post = async (endpoint, payload) => {
+    return this.fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(this.handleHTTPError)
+    .then(response => response.json());
   }
 }
 export default restAPI;

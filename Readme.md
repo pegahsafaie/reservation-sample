@@ -4,7 +4,8 @@ this mono repo contains "web" and "api" projects(packages are managed by lerna).
 ## Tech stack
 client: js/ vuejs/ vuetify
 server: nodejs/ js/ express/ mongoose/ YAML(for public api definition)
-server testing: integrated testing using jest, supertest and mongodb-memory-server
+server testing: static testing using eslint and integrated testing using jest, supertest and mongodb-memory-server
+client testing: static testing using eslint and componet testing not done!
 deployment: herokus/ mongodb atlas
 
 ## Deploy
@@ -27,3 +28,4 @@ these are list of issues I did not have enough time to fix
 
 1. after selecting check-in/out dates, the cursor should be focus on next field
 2. cleaning form after submit
+3. title and icon of the page should be customized

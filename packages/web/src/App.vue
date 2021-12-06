@@ -152,6 +152,7 @@
 <script>
 
 import countryRestAPI from './data/countryRestAPI';
+import reservationRestAPI from './data/reservationRestAPI';
 import RangeDatePicker from './components/RangeDatePicker.vue';
 export default {
   name: 'App',
@@ -212,17 +213,10 @@ export default {
           postalCode: this.postalCode
         }]
       }
-      const response = await fetch(`${process.env.VUE_APP_RESERVATION_API}/api/reservation`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
-      const parsedResponse = await response.json();
-      if(!parsedResponse.error) {  
+      const response = await reservationRestAPI.insertReservation(payload);
+      if(!response.error) {  
         this.successDialog = true;
-        this.trackingNumber = parsedResponse.trackingId;
+        this.trackingNumber = response.trackingId;
       } else {
         this.errDialog = true,
         this.trackingNumber = null;

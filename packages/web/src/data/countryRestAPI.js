@@ -1,11 +1,11 @@
 import baseRestAPI from './baseRestAPI';
+const countryConnection = new baseRestAPI(process.env.VUE_APP_COUNTRY_BASE_URL);
 
 const countryAPI = {
   getCountries,
 }
 
 function getCountries () {
-  const countryConnection = new baseRestAPI(process.env.VUE_APP_COUNTRY_BASE_URL);
   return countryConnection.get('/all');
 }
 
