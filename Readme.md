@@ -5,7 +5,7 @@ this mono repo contains "web" and "api" projects(packages are managed by lerna).
 - client: js/ vuejs/ vuetify
 - server: nodejs/ js/ express/ mongoose/ YAML(for public api definition)
 - server testing: static testing using eslint and integrated testing using jest, supertest and mongodb-memory-server
-- client testing: static testing using eslint and componet testing not done!
+- client testing: static testing using eslint!
 - deployment: herokus/ mongodb atlas
 
 ## Deploy
@@ -24,7 +24,7 @@ these are list of improvement I did not have enough time to fix
 2. are city and postalcCode part of billing information or reservation information?
 
 ## Known issues
-these are list of issues I did not have enough time to fix
+these are list of issues I did not have enough time to implement
 
 1. after selecting check-in/out dates, the cursor should be focus on next field
 2. cleaning form after submit
