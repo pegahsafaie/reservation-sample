@@ -6,7 +6,7 @@ this mono repo contains "web" and "api" projects(packages are managed by lerna).
 - server: nodejs/ js/ express/ mongoose/ YAML(for public api definition)
 - server testing: static testing using eslint and integrated testing using jest, supertest and mongodb-memory-server
 - client testing: static testing using eslint!
-- deployment: herokus/ mongodb atlas
+- deployment: heroku/ mongodb atlas
 
 ## Deploy
 - web-address: https://sample-reservation-web.herokuapp.com/
