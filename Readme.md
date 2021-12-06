@@ -2,23 +2,23 @@
 this mono repo contains "web" and "api" projects(packages are managed by lerna).
 
 ## Tech stack
-client: js/ vuejs/ vuetify
-server: nodejs/ js/ express/ mongoose/ YAML(for public api definition)
-server testing: static testing using eslint and integrated testing using jest, supertest and mongodb-memory-server
-client testing: static testing using eslint and componet testing not done!
-deployment: herokus/ mongodb atlas
+- client: js/ vuejs/ vuetify
+- server: nodejs/ js/ express/ mongoose/ YAML(for public api definition)
+- server testing: static testing using eslint and integrated testing using jest, supertest and mongodb-memory-server
+- client testing: static testing using eslint and componet testing not done!
+- deployment: herokus/ mongodb atlas
 
 ## Deploy
-web-address: https://sample-reservation-web.herokuapp.com/
-api-address: https://sample-reservation-api.herokuapp.com/
+- web-address: https://sample-reservation-web.herokuapp.com/
+- api-address: https://sample-reservation-api.herokuapp.com/
 
 ## Improvements
 these are list of improvement I did not have enough time to fix
 1. Add integration test(component testing) to the client code - [using vue utils and jest]
 2. Add e2e test - [using cypress]
 3. Create deployment pipeline [using github actions or heroku pipeline]
-4. find a better way to introduce * into requied fields. currently I have to duplicate slot for each component
-
+4. Find a better way to introduce * into requied fields. currently I have to duplicate slot for each component
+5. Define a mongoose schema validator to avoide entering check-out dates < check-in dates
 ## Open questions on db design
 1. what does make user unique?
 2. are city and postalcCode part of billing information or reservation information?
